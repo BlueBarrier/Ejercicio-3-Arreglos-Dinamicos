@@ -41,5 +41,12 @@ public class Cliente{
         System.out.printf("Total a pagar en factura #%d: %d",factura, pagar);
     }
     
-
+    @Override
+    public String toString(){
+        return "Cliente{"+
+                "\nNombre: "+nombre+
+                "\nDPI: "+DPI+
+                "\nDispositivos: "+dispositivos+
+                "\n}";
+    }
 }

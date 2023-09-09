@@ -12,5 +12,7 @@
 public class TiendaDeReparaciones {
     public static void main(String[] args) {
         System.out.println("Hola");
+        Cliente cliente = new Cliente("Erick", "36830000");
+        System.out.println(cliente);
     }
 }
