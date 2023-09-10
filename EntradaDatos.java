@@ -42,8 +42,8 @@ public class EntradaDatos {
                                 "\n3.Reparación hardware"+
                                 "\n4.Reparación software"+
                                 "\n5.Reparación batería");
+        
         int opcion = scanner.nextInt();
-        scanner.nextLine();
         return opcion;
     }
 

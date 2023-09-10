@@ -9,10 +9,8 @@
  * @fechaCreacion: 9/09/2023
  * @fechaMod: 09/09/2023
  */
-import java.util.Scanner;
 import java.util.ArrayList;
 public class TiendaManager {
-    private Scanner sc = new Scanner(System.in);
     private EntradaDatos entradaDatos = new EntradaDatos();
     boolean condicion = false;
     private ArrayList<Cliente> clientes = new ArrayList<>();
@@ -24,10 +22,10 @@ public class TiendaManager {
         cliente.addDispositivo(new Dispositivo(cliente, entradaDatos.pedirTipo(), entradaDatos.pedirFabricante()));
         cliente.getDispositivos().get(0).addServicios(new Servicio(entradaDatos.ingresarFecha()));
         cliente.getDispositivos().get(0).getServicios().get(0).elegirServicio(entradaDatos.elegirServicio());
-        sc.close();
     }
     public void  opcion(){
-        switch(entradaDatos.pedirOpcionMenu()){
+        int opcion = entradaDatos.pedirOpcionMenu();
+        switch(opcion){
             case 1:
                 this.nuevaVenta();
                 break;
@@ -36,10 +34,14 @@ public class TiendaManager {
                 break;
             case 3:
                 this.nuevoServicio();
+                break;
             case 4:
                 //tienda.estadisticas();
             case 5:
                 this.setSalirTienda(true); // setear la salida
+                break;
+            default:
+                System.out.println("VOS! Que hiciste VOS!");
         }
     }
     public void setSalirTienda(boolean salir){condicion =(boolean) salir;} // cambiar el valor de condicion
