@@ -21,8 +21,17 @@ public class TiendaManager {
         cliente.getDispositivos().get(0).getServicios().get(0).elegirServicio(entradaDatos.elegirServicio());
         sc.close();
     }
-    public int opcion(){
-        return 0;
+    public void  opcion(){
+        switch(entradaDatos.pedirOpcionMenu()){
+            case 1:
+                this.nuevaVenta();
+            case 2:
+                //tienda.nuevoDispositivo();
+            case 3:
+                //tienda.nuevoServicio();
+            case 4:
+                //tienda.estadisticas();
+        }
     }
  
 }

@@ -30,14 +30,23 @@ public class EntradaDatos {
     }
     public int elegirServicio(){
         System.out.println("Seleccione el número de servicio deseado: "+
-                                "1.Reparación de pantalla"+
-                                "2.Incremento de memoria"+
-                                "3.Reparación hardware"+
-                                "4.Reparación software"+
-                                "5.Reparación batería");
+                                "\n1.Reparación de pantalla"+
+                                "\n2.Incremento de memoria"+
+                                "\n3.Reparación hardware"+
+                                "\n4.Reparación software"+
+                                "\n5.Reparación batería");
         return scanner.nextInt();
     }
 
+    // para la clase TiendaManager
+    public int pedirOpcionMenu(){
+        System.out.println("Seleccione el número de operación que desee realizar"+
+                                "\n1.Nuevo Cliente"+
+                                "\n2.Agregar nuevo Dispositivo a X Cliente"+
+                                "\n3.Agregar nuevo Servicio a Dispositivo de X Cliente"+
+                                "\n4.Mostrar Estadísticas");
+        return scanner.nextInt();
+    }
 
     
 }

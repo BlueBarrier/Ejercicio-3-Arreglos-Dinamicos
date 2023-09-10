@@ -16,16 +16,7 @@ public class TiendaDeReparaciones {
         System.out.println("BIENVENIDO A TECHGT");
         do{
             tienda.nuevaVenta();
-            switch(tienda.opcion()){
-                case 1:
-                    tienda.nuevaVenta();
-                case 2:
-                    //tienda.nuevoDispositivo();
-                case 3:
-                    //tienda.nuevoServicio();
-                case 4:
-                    //tienda.estadisticas();
-            }
+            tienda.opcion();
         }while(!salir);
     }
 }
