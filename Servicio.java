@@ -12,9 +12,10 @@
 public class Servicio {
     private String fecha;
     private int precio;
-    private int[] precios;
+    private int[] precios = {500, 1200, 1500, 700, 1800};
     private String tipo;
-    private String[] tipos;
+    private String[] tipos = {"Reparación de pantalla", "Incremento de memoria",
+    "Reparación de hardware","Reparación de software","Reparación de batería"};
 
     public Servicio(String fecha){
         this.fecha = fecha;
