@@ -13,6 +13,7 @@ import java.util.Scanner;
 public class TiendaManager {
     private Scanner sc = new Scanner(System.in);
     private EntradaDatos entradaDatos;
+    boolean condicion = false;
 
     public void nuevaVenta(){
         Cliente cliente = new Cliente(entradaDatos.pedirNombre(), entradaDatos.pedirDPI());
@@ -31,7 +32,13 @@ public class TiendaManager {
                 //tienda.nuevoServicio();
             case 4:
                 //tienda.estadisticas();
+            case 5:
+                this.setSalirTienda(true); // setear la salida
         }
+    }
+    public void setSalirTienda(boolean salir){condicion =(boolean) salir;} // cambiar el valor de condicion
+    public boolean salirTienda(){
+        return condicion;
     }
  
 }

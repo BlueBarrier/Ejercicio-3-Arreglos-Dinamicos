@@ -12,11 +12,9 @@
 public class TiendaDeReparaciones {
     public static void main(String[] args) {
         TiendaManager tienda = new TiendaManager();
-        boolean salir = false;
         System.out.println("BIENVENIDO A TECHGT");
         do{
-            tienda.nuevaVenta();
             tienda.opcion();
-        }while(!salir);
+        }while(!tienda.salirTienda());
     }
 }
