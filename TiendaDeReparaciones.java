@@ -4,15 +4,28 @@
  * Programación Orientada a Objetos - CC 2008 - 50
  * 
  * @author: Erick Barrera - 231238
- * @description: driverprogram
+ * @description: main
  * @version: 1.0
  * @fechaCreacion: 9/09/2023
  * @fechaMod: 09/09/2023
  */
 public class TiendaDeReparaciones {
     public static void main(String[] args) {
-        System.out.println("Hola");
-        Cliente cliente = new Cliente("Erick", "36830000");
-        System.out.println(cliente);
+        TiendaManager tienda = new TiendaManager();
+        boolean salir = false;
+        System.out.println("BIENVENIDO A TECHGT");
+        do{
+            tienda.nuevaVenta();
+            switch(tienda.opcion()){
+                case 1:
+                    tienda.nuevaVenta();
+                case 2:
+                    //tienda.nuevoDispositivo();
+                case 3:
+                    //tienda.nuevoServicio();
+                case 4:
+                    //tienda.estadisticas();
+            }
+        }while(!salir);
     }
 }
