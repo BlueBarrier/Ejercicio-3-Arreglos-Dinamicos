@@ -12,22 +12,28 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 public class EntradaDatos {
-    private Scanner scanner;
+    private Scanner scanner = new Scanner(System.in);
     // para la clase Cliente
-    public String pedirNombre(){System.out.println("Ingrese su nombre: "); return scanner.nextLine();} // pedir nombre
-    public String pedirDPI(){System.out.println("Ingrese su DPI: "); return scanner.nextLine();} // pedir DPI
+    public String pedirNombre(){
+        System.out.println("Ingrese su nombre: "); 
+        String nombre = scanner.nextLine();
+        return nombre;
+    } // pedir nombre
+    public String pedirDPI(){System.out.println("Ingrese su DPI: "); String DPI=scanner.nextLine(); return DPI;} // pedir DPI
     
     // para la clase Dispositivo
     public String pedirTipo(){
         System.out.println("Ingrese el tipo de dispositivo a realizar servicio (Teléfono, Tablet, Computadora, TV, Consola de Videojuegos): ");
-        return scanner.nextLine();
+        String tipo = scanner.nextLine(); 
+        return tipo;
     }
-    public String pedirFabricante(){System.out.println("Ingrese el nombre del fabricante: "); return scanner.nextLine();}
+    public String pedirFabricante(){System.out.println("Ingrese el nombre del fabricante: "); String fabri = scanner.nextLine(); return fabri;}
     
     // para la clase Servicio
     public String ingresarFecha(){
         System.out.println("Ingrese la fecha del servicio utilizando el siguiente formato (dd/mm/aa): ");
-        return scanner.nextLine();
+       String fecha = scanner.nextLine();
+        return fecha;
     }
     public int elegirServicio(){
         System.out.println("Seleccione el número de servicio deseado: "+
@@ -36,7 +42,9 @@ public class EntradaDatos {
                                 "\n3.Reparación hardware"+
                                 "\n4.Reparación software"+
                                 "\n5.Reparación batería");
-        return scanner.nextInt();
+        int opcion = scanner.nextInt();
+        scanner.nextLine();
+        return opcion;
     }
 
     // para la clase TiendaManager
@@ -46,7 +54,9 @@ public class EntradaDatos {
                                 "\n2.Agregar nuevo Dispositivo a X Cliente"+
                                 "\n3.Agregar nuevo Servicio a Dispositivo de X Cliente"+
                                 "\n4.Mostrar Estadísticas");
-        return scanner.nextInt();
+        int opcion = scanner.nextInt();
+        scanner.nextLine();
+        return opcion;
     }
     public String pedirCliente(ArrayList<String>listaTemp){
         int contador = 1;

@@ -21,7 +21,7 @@ public class Dispositivo {
         this.tipo = tipo;
         this.fabricante = fabricante;
         this.costo = 0;
-        this.servicios=null;
+        this.servicios= new ArrayList<>();
     }
 
     public Cliente getCliente() {

@@ -21,7 +21,7 @@ public class Cliente{
     public Cliente(String nombre, String DPI){
         this.nombre = nombre;
         this.DPI = DPI;
-        this.dispositivos=null;
+        this.dispositivos= new ArrayList<>();
     }
     
     public String getNombre(){return nombre;}

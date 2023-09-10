@@ -13,9 +13,9 @@ import java.util.Scanner;
 import java.util.ArrayList;
 public class TiendaManager {
     private Scanner sc = new Scanner(System.in);
-    private EntradaDatos entradaDatos;
+    private EntradaDatos entradaDatos = new EntradaDatos();
     boolean condicion = false;
-    private ArrayList<Cliente> clientes;
+    private ArrayList<Cliente> clientes = new ArrayList<>();
     
 
     public void nuevaVenta(){
@@ -30,8 +30,10 @@ public class TiendaManager {
         switch(entradaDatos.pedirOpcionMenu()){
             case 1:
                 this.nuevaVenta();
+                break;
             case 2:
                 this.nuevoDispositivo();
+                break;
             case 3:
                 //tienda.nuevoServicio();
             case 4:
