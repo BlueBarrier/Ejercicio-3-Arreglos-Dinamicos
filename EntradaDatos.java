@@ -61,7 +61,19 @@ public class EntradaDatos {
     public String pedirCliente(ArrayList<String>listaTemp){
         int contador = 1;
         int index=0;
-        System.out.println("Seleccione el número del cliente");
+        System.out.println("Seleccione el número del cliente\n:");
+        for(String i: listaTemp){
+            System.out.printf("%d %s.",contador,i);
+            contador++;
+        }
+        index = scanner.nextInt();
+        scanner.nextLine();
+        return listaTemp.get(index);
+    }
+    public String pedirDispositivo(ArrayList<String>listaTemp){
+        int contador = 1;
+        int index=0;
+        System.out.println("Seleccione el número del dispositivo\n:");
         for(String i: listaTemp){
             System.out.printf("%d %s.",contador,i);
             contador++;

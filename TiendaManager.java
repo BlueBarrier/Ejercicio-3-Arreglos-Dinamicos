@@ -35,7 +35,7 @@ public class TiendaManager {
                 this.nuevoDispositivo();
                 break;
             case 3:
-                //tienda.nuevoServicio();
+                this.nuevoServicio();
             case 4:
                 //tienda.estadisticas();
             case 5:
@@ -69,4 +69,33 @@ public class TiendaManager {
         cliente.getDispositivos().get(cliente.getDispositivos().indexOf(dispo)).getServicios().get(0).elegirServicio(entradaDatos.elegirServicio());
     }
 
+    public void nuevoServicio(){
+        ArrayList<String> listaTemp = new ArrayList<>();
+        for(Cliente i: clientes){listaTemp.add(i.getNombre());}
+        // pedir el nombre del cliente
+        String nombreCliente = entradaDatos.pedirCliente(listaTemp);
+        // buscar el cliente por nombre
+        Cliente cliente = null;
+        for(Cliente j: clientes){
+            if(j.getNombre().equals(nombreCliente)){
+                cliente = j;
+            }
+        }
+        // pasar el nombre de dispositivo para pedir dispositivo
+        ArrayList<String> listaTemp2 = new ArrayList<>();
+        for(Dispositivo k: cliente.getDispositivos()){listaTemp.add(k.getTipo());}
+        // pedir el nombre del dispositivo
+        String tipoDispositivo = entradaDatos.pedirDispositivo(listaTemp2);
+        // buscar el dispositivo por tipo
+        Dispositivo dispositivo = null;
+        for(Dispositivo l: cliente.getDispositivos()){
+            if(l.getTipo().equals(tipoDispositivo)){
+                dispositivo = l;
+            }
+        }
+        Servicio servicio = new Servicio(entradaDatos.ingresarFecha());
+        dispositivo.addServicios(servicio);
+        dispositivo.getServicios().get(dispositivo.getServicios().indexOf(servicio)).elegirServicio(entradaDatos.elegirServicio());
+
+    }
 }
