@@ -9,6 +9,7 @@
  * @fechaCreacion: 9/09/2023
  * @fechaMod: 09/09/2023
  */
+import java.util.ArrayList;
 import java.util.Scanner;
 public class EntradaDatos {
     private Scanner scanner;
@@ -47,6 +48,17 @@ public class EntradaDatos {
                                 "\n4.Mostrar Estadísticas");
         return scanner.nextInt();
     }
-
+    public String pedirCliente(ArrayList<String>listaTemp){
+        int contador = 1;
+        int index=0;
+        System.out.println("Seleccione el número del cliente");
+        for(String i: listaTemp){
+            System.out.printf("%d %s.",contador,i);
+            contador++;
+        }
+        index = scanner.nextInt();
+        scanner.nextLine();
+        return listaTemp.get(index);
+    }
     
 }
