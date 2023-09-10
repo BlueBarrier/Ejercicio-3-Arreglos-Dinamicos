@@ -16,7 +16,7 @@ public class Servicio {
     private String tipo;
     private String[] tipos;
 
-    public Servicio(String tipo, int precio, String fecha){
+    public Servicio(String fecha){
         this.fecha = fecha;
         this.tipo = null;
         this.precio = 0;
