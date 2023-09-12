@@ -3,7 +3,8 @@
  * Departamento de Ciencias de la Computación
  * Programación Orientada a Objetos - CC 2008 - 50
  * 
- * @author: Erick Barrera - 231238; Juan Figueroa - 23092
+ * @author: Erick Barrera - 231238 
+ * @author: Juan Figueroa - 23092
  * @description: programa para estadísticas de la tienda
  * @version: 2.0
  * @fechaCreacion: 10/09/2023
@@ -49,12 +50,10 @@ public class Statistics {
             n--;
         } while(cambio);
 
-        for(String j: fabricantes_unicos){
-            System.out.println(j);
+        System.out.println("Fabricantes más comunes: Número de dispositivos del fabricante + fabricante");
+        for(int i=0;i<indices.size();i++){
+            System.out.println(indices.get(i)+" "+fabricantes_unicos.get(i));
         } 
-        for(int j: indices){
-            System.out.println(j);
-        }
     }
     
     public void servicios_frecuentes(ArrayList<String> servicios){
@@ -94,13 +93,10 @@ public class Statistics {
             n--;
         } while(cambio);
     
-    
-        for(String j: servicios_unicos){
-            System.out.println(j);
+        System.out.println("Servicios más frecuentes: Veces solicitadas + servicio");
+        for(int i=0;i<indices.size();i++){
+            System.out.println(indices.get(i)+" "+servicios_unicos.get(i));
         } 
-        for(int j: indices){
-            System.out.println(j);
-        }
         
     }
 

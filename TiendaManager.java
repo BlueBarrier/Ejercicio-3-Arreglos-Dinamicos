@@ -4,6 +4,7 @@
  * Programación Orientada a Objetos - CC 2008 - 50
  * 
  * @author: Erick Barrera - 231238
+ * @author: Juan Figueroa - 23092
  * @description: driverprogram
  * @version: 2.0
  * @fechaCreacion: 9/09/2023
@@ -50,7 +51,13 @@ public class TiendaManager {
                 System.out.println("VOS! Que hiciste VOS!");
         }
     }
+    /**
+     * @param salir
+     */
     public void setSalirTienda(boolean salir){condicion =(boolean) salir;} // cambiar el valor de condicion
+    /**
+     * @return
+     */
     public boolean salirTienda(){
         return condicion;
     }
