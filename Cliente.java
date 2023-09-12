@@ -45,7 +45,7 @@ public class Cliente{
             pagar += i.getCosto(); 
             System.out.println(i.toString()+"___ Q" + i.getCosto());
         } 
-        System.out.printf("Total a pagar en factura #%d: %d",factura, pagar);
+        System.out.printf("Total a pagar en factura #%d: Q%d",factura, pagar);
     }
     
     @Override

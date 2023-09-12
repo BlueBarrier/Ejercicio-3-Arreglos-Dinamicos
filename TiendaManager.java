@@ -37,7 +37,8 @@ public class TiendaManager {
                 this.nuevoServicio();
                 break;
             case 4:
-                //tienda.estadisticas();
+                this.estadisticas();
+                break;
             case 5:
                 this.terminarReparacion();
                 break;
@@ -147,6 +148,7 @@ public class TiendaManager {
                         }
                     }
                 }
+                stats.servicios_frecuentes(serviciosS);
                 break;
             case 3:
                 ArrayList<Servicio> servicios = new ArrayList<>();
@@ -158,7 +160,7 @@ public class TiendaManager {
                         }
                     }
                 }
-                stats.ingresos_por_fecha(servicios);
+                System.out.println("El monto en ese rango de fechas es de: Q"+stats.ingresos_por_fecha(servicios)); 
                 break;
             default:
                 System.out.println("A dónde vas? Vuelve a iniciar \n");

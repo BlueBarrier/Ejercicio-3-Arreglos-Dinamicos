@@ -114,7 +114,6 @@ public class Statistics {
                 monto+=h.getPrecio();
             }
         }
-        System.out.println(monto);
         return(monto);
     }
 }
