@@ -85,4 +85,28 @@ public class EntradaDatos {
         return listaTemp.get(index-1);
     }
     
+    public int pedirInicioMes(){
+        System.out.println("Ingrese el mes inicial en dígitos de forma 00: \n");
+        int mes = scanner.nextInt();
+        scanner.nextLine();
+        return mes;
+    }
+
+    public int pedirFinMes(){
+        System.out.println("Ingrese el mes final en dígitos de forma 00: \n");
+        int mes = scanner.nextInt();
+        scanner.nextLine();
+        return mes;
+    }
+
+    public int pedirOpcionStats(){
+        System.out.println("\n Seleccione el número de estadística que quiera ver: "+
+                                "\n1. Fabricantes comunes"+
+                                "\n2. Servicios comunes"+
+                                "\n3. Ingresos por fecha");
+        int opi = scanner.nextInt();
+        scanner.nextLine();
+        return opi;
+    }
+
 }

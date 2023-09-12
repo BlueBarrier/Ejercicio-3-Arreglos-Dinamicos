@@ -5,62 +5,13 @@
  * 
  * @author: Erick Barrera - 231238; Juan Figueroa - 23092
  * @description: programa para estadísticas de la tienda
- * @version: 1.0
+ * @version: 2.0
  * @fechaCreacion: 10/09/2023
  * @fechaMod: 11/09/2023
  */
 import java.util.ArrayList;
-import java.util.Scanner;
-
-// class Servicio{
-//     int monto;
-//     String fecha;
-//     public Servicio(int monto, String fecha){
-//         this.monto=monto;
-//         this.fecha=fecha;
-//     }
-
-//     public int getMonto(){
-//         return monto;
-//     }
-//     public String getFecha(){
-//         return fecha;
-//     }
-// }
-
 public class Statistics {
-    public Statistics(){}
-    // public static void main(String[]args){
-    //     Statistics programa= new Statistics();
-    //     ArrayList<String> fabricantes = new ArrayList<>();
-    //     fabricantes.add("apple");
-    //     fabricantes.add("apple");
-    //     fabricantes.add("apple");
-    //     fabricantes.add("samsung");
-    //     fabricantes.add("xiaomi");
-    //     fabricantes.add("xiaomi");
-
-    //     ArrayList<String> servicios = new ArrayList<>();
-    //     servicios.add("pantalla");
-    //     servicios.add("pantalla");
-    //     servicios.add("pantalla");
-    //     servicios.add("hardware");
-    //     servicios.add("batería");
-    //     servicios.add("batería");
-
-    //     ArrayList<Servicio> ingresos = new ArrayList<>();
-    //     ingresos.add(new Servicio(500,"19/07/23"));
-    //     ingresos.add(new Servicio(500,"22/08/23"));
-    //     ingresos.add(new Servicio(500,"14/09/23"));
-    //     ingresos.add(new Servicio(1200,"19/06/23"));
-    //     ingresos.add(new Servicio(1800,"12/11/23"));
-    //     ingresos.add(new Servicio(1800,"12/1/0223"));
-    //     programa.fabricantes_comunes(fabricantes);
-    //     programa.ingresos_por_fecha(ingresos);
-
-    // }
-
-
+    EntradaDatos entradaDatos = new EntradaDatos();
     public void fabricantes_comunes(ArrayList<String> fabricantes){
         //se obtiene una lista de todos los fabricantes sin repetir
         ArrayList<String> fabricantes_unicos = new ArrayList<>();
@@ -98,7 +49,6 @@ public class Statistics {
             n--;
         } while(cambio);
 
-
         for(String j: fabricantes_unicos){
             System.out.println(j);
         } 
@@ -106,27 +56,65 @@ public class Statistics {
             System.out.println(j);
         }
     }
-
-    //public void servicios_frecuentes(ArrayList<String> servicios){
-        //lo mismo que fabricantes_comunes()
-    //}
+    
+    public void servicios_frecuentes(ArrayList<String> servicios){
+        //se obtiene una lista de todos los servicios sin repetir
+        ArrayList<String> servicios_unicos = new ArrayList<>();
+        for(String servicio: servicios){
+            if(servicios_unicos.contains(servicio)==false){
+                servicios_unicos.add(servicio);
+            }
+        }
+    
+        //Se obtiene el número de veces que se repiten
+        ArrayList<Integer> indices = new ArrayList<>();
+        for(String j: servicios_unicos){
+            int count=0;
+            for(String k: servicios){
+                if(k==j){count++;}
+            }
+            indices.add(count);
+        } 
+        int n=indices.size();
+        boolean cambio;
+    
+        do{
+            cambio=false;
+            for(int i=1;i<n; i++){
+                if(indices.get(i-1)<indices.get(i)){
+                    int temp1 = indices.get(i-1);
+                    String temp2 = servicios_unicos.get(i-1);
+                    indices.set(i-1,indices.get(i));
+                    servicios_unicos.set(i-1,servicios_unicos.get(i));
+                    indices.set(i,temp1);
+                    servicios_unicos.set(i,temp2);
+                    cambio=true;
+                }
+            }
+            n--;
+        } while(cambio);
+    
+    
+        for(String j: servicios_unicos){
+            System.out.println(j);
+        } 
+        for(int j: indices){
+            System.out.println(j);
+        }
+        
+    }
 
     public int ingresos_por_fecha(ArrayList<Servicio> ingresos){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Ingrese el mes inicial en dígitos de forma 00");
-        int mes1 = scanner.nextInt();
-        System.out.println("Ingrese el mes final en dígitos de forma 00");
-        int mes2 = scanner.nextInt();
-
+        int mes1 = entradaDatos.pedirInicioMes();
+        int mes2 = entradaDatos.pedirFinMes();
         int monto=0;
         for(Servicio h: ingresos){
             String[] fecha=h.getFecha().split("/");
             if(Integer.parseInt(fecha[1])>=mes1 && Integer.parseInt(fecha[1])<=mes2){
-                // monto+=h.getMonto();
+                monto+=h.getPrecio();
             }
         }
         System.out.println(monto);
-        scanner.close();
         return(monto);
     }
 }

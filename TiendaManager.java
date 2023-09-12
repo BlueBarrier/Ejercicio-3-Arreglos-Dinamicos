@@ -12,10 +12,11 @@
 import java.util.ArrayList;
 public class TiendaManager {
     private EntradaDatos entradaDatos = new EntradaDatos();
-    boolean condicion = false;
-    private ArrayList<Cliente> clientes = new ArrayList<>();
+    private Statistics stats = new Statistics();
     
-
+    private ArrayList<Cliente> clientes = new ArrayList<>();
+    boolean condicion = false;
+    
     public void nuevaVenta(){
         Cliente cliente = new Cliente(entradaDatos.pedirNombre(), entradaDatos.pedirDPI());
         clientes.add(cliente);
@@ -123,5 +124,45 @@ public class TiendaManager {
         // sumar todos los servicios
         System.out.println(cliente+"\n");
         cliente.generarFactura();
+    }
+
+    public void estadisticas(){
+        switch(entradaDatos.pedirOpcionStats()){
+            case 1:
+                ArrayList<String> fabricantes = new ArrayList<>();
+                // iterar cada cliente para iterar cada dispositivo para conseguir el fabricante 
+                for(Cliente i: clientes){
+                    for(Dispositivo j: i.getDispositivos()){
+                        fabricantes.add(j.getFabricante());
+                    }
+                }
+                stats.fabricantes_comunes(fabricantes);
+                break;
+            case 2:
+                ArrayList<String> serviciosS =  new ArrayList<>();
+                for(Cliente i: clientes){
+                    for(Dispositivo j: i.getDispositivos()){
+                        for(Servicio k: j.getServicios()){
+                            serviciosS.add(k.getTipo());
+                        }
+                    }
+                }
+                break;
+            case 3:
+                ArrayList<Servicio> servicios = new ArrayList<>();
+                // iterar cada cliente para iterar cada dispositivo para conseguir cada servicio 
+                for(Cliente i: clientes){
+                    for(Dispositivo j: i.getDispositivos()){
+                        for(Servicio k: j.getServicios()){
+                            servicios.add(k);
+                        }
+                    }
+                }
+                stats.ingresos_por_fecha(servicios);
+                break;
+            default:
+                System.out.println("A dónde vas? Vuelve a iniciar \n");
+                break;
+        }
     }
 }
