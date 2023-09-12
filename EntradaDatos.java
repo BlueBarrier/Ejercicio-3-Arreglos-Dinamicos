@@ -49,11 +49,13 @@ public class EntradaDatos {
 
     // para la clase TiendaManager
     public int pedirOpcionMenu(){
-        System.out.println("Seleccione el número de operación que desee realizar"+
+        System.out.println("\nSeleccione el número de operación que desee realizar"+
                                 "\n1.Nuevo Cliente"+
                                 "\n2.Agregar nuevo Dispositivo a X Cliente"+
                                 "\n3.Agregar nuevo Servicio a Dispositivo de X Cliente"+
-                                "\n4.Mostrar Estadísticas");
+                                "\n4.Mostrar Estadísticas"+
+                                "\n5.Finalizar reparaciones"+
+                                "\n6.Salir");
         int opcion = scanner.nextInt();
         scanner.nextLine();
         return opcion;
@@ -61,26 +63,26 @@ public class EntradaDatos {
     public String pedirCliente(ArrayList<String>listaTemp){
         int contador = 1;
         int index=0;
-        System.out.println("Seleccione el número del cliente\n:");
+        System.out.println("Seleccione el número del cliente:");
         for(String i: listaTemp){
-            System.out.printf("%d %s.",contador,i);
+            System.out.printf("\n%d %s.",contador,i);
             contador++;
         }
         index = scanner.nextInt();
         scanner.nextLine();
-        return listaTemp.get(index);
+        return listaTemp.get(index-1);
     }
     public String pedirDispositivo(ArrayList<String>listaTemp){
         int contador = 1;
         int index=0;
-        System.out.println("Seleccione el número del dispositivo\n:");
+        System.out.println("Seleccione el número del dispositivo:");
         for(String i: listaTemp){
-            System.out.printf("%d %s.",contador,i);
+            System.out.printf("\n%d %s.",contador,i);
             contador++;
         }
         index = scanner.nextInt();
         scanner.nextLine();
-        return listaTemp.get(index);
+        return listaTemp.get(index-1);
     }
     
 }

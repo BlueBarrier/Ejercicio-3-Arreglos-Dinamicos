@@ -1,53 +1,64 @@
+/**
+ * Universidad del Valle de Guatemala
+ * Departamento de Ciencias de la Computación
+ * Programación Orientada a Objetos - CC 2008 - 50
+ * 
+ * @author: Erick Barrera - 231238; Juan Figueroa - 
+ * @description: driverprogram
+ * @version: 1.0
+ * @fechaCreacion: 9/09/2023
+ * @fechaMod: 09/09/2023
+ */
 import java.util.ArrayList;
 import java.util.Scanner;
 
-class Servicio{
-    int monto;
-    String fecha;
-    public Servicio(int monto, String fecha){
-        this.monto=monto;
-        this.fecha=fecha;
-    }
+// class Servicio{
+//     int monto;
+//     String fecha;
+//     public Servicio(int monto, String fecha){
+//         this.monto=monto;
+//         this.fecha=fecha;
+//     }
 
-    public int getMonto(){
-        return monto;
-    }
-    public String getFecha(){
-        return fecha;
-    }
-}
+//     public int getMonto(){
+//         return monto;
+//     }
+//     public String getFecha(){
+//         return fecha;
+//     }
+// }
 
 public class Statistics {
     public Statistics(){}
-    public static void main(String[]args){
-        Statistics programa= new Statistics();
-        ArrayList<String> fabricantes = new ArrayList<>();
-        fabricantes.add("apple");
-        fabricantes.add("apple");
-        fabricantes.add("apple");
-        fabricantes.add("samsung");
-        fabricantes.add("xiaomi");
-        fabricantes.add("xiaomi");
+    // public static void main(String[]args){
+    //     Statistics programa= new Statistics();
+    //     ArrayList<String> fabricantes = new ArrayList<>();
+    //     fabricantes.add("apple");
+    //     fabricantes.add("apple");
+    //     fabricantes.add("apple");
+    //     fabricantes.add("samsung");
+    //     fabricantes.add("xiaomi");
+    //     fabricantes.add("xiaomi");
 
-        ArrayList<String> servicios = new ArrayList<>();
-        servicios.add("pantalla");
-        servicios.add("pantalla");
-        servicios.add("pantalla");
-        servicios.add("hardware");
-        servicios.add("batería");
-        servicios.add("batería");
+    //     ArrayList<String> servicios = new ArrayList<>();
+    //     servicios.add("pantalla");
+    //     servicios.add("pantalla");
+    //     servicios.add("pantalla");
+    //     servicios.add("hardware");
+    //     servicios.add("batería");
+    //     servicios.add("batería");
 
-        ArrayList<Servicio> ingresos = new ArrayList<>();
-        ingresos.add(new Servicio(500,"19/07/23"));
-        ingresos.add(new Servicio(500,"22/08/23"));
-        ingresos.add(new Servicio(500,"14/09/23"));
-        ingresos.add(new Servicio(1200,"19/06/23"));
-        ingresos.add(new Servicio(1800,"12/11/23"));
-        ingresos.add(new Servicio(1800,"12/1/0223"));
-        programa.fabricantes_comunes(fabricantes);
-        programa.ingresos_por_fecha(ingresos);
+    //     ArrayList<Servicio> ingresos = new ArrayList<>();
+    //     ingresos.add(new Servicio(500,"19/07/23"));
+    //     ingresos.add(new Servicio(500,"22/08/23"));
+    //     ingresos.add(new Servicio(500,"14/09/23"));
+    //     ingresos.add(new Servicio(1200,"19/06/23"));
+    //     ingresos.add(new Servicio(1800,"12/11/23"));
+    //     ingresos.add(new Servicio(1800,"12/1/0223"));
+    //     programa.fabricantes_comunes(fabricantes);
+    //     programa.ingresos_por_fecha(ingresos);
 
-    }
+    // }
 
 
     public void fabricantes_comunes(ArrayList<String> fabricantes){
@@ -111,7 +122,7 @@ public class Statistics {
         for(Servicio h: ingresos){
             String[] fecha=h.getFecha().split("/");
             if(Integer.parseInt(fecha[1])>=mes1 && Integer.parseInt(fecha[1])<=mes2){
-                monto+=h.getMonto();
+                // monto+=h.getMonto();
             }
         }
         System.out.println(monto);

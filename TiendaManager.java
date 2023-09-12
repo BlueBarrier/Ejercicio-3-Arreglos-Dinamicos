@@ -38,6 +38,10 @@ public class TiendaManager {
             case 4:
                 //tienda.estadisticas();
             case 5:
+                this.terminarReparacion();
+                break;
+            case 6:
+                System.out.println("Gracias por usar TECHGT");
                 this.setSalirTienda(true); // setear la salida
                 break;
             default:
@@ -85,7 +89,9 @@ public class TiendaManager {
         }
         // pasar el nombre de dispositivo para pedir dispositivo
         ArrayList<String> listaTemp2 = new ArrayList<>();
-        for(Dispositivo k: cliente.getDispositivos()){listaTemp.add(k.getTipo());}
+        for(Dispositivo k: cliente.getDispositivos()){
+            listaTemp2.add(k.getTipo());
+        }
         // pedir el nombre del dispositivo
         String tipoDispositivo = entradaDatos.pedirDispositivo(listaTemp2);
         // buscar el dispositivo por tipo
@@ -99,5 +105,23 @@ public class TiendaManager {
         dispositivo.addServicios(servicio);
         dispositivo.getServicios().get(dispositivo.getServicios().indexOf(servicio)).elegirServicio(entradaDatos.elegirServicio());
 
+    }
+
+    public void terminarReparacion(){
+        ArrayList<String> listaTemp = new ArrayList<>();
+        for(Cliente i: clientes){listaTemp.add(i.getNombre());}
+        // pedir el nombre del cliente
+        String nombreCliente = entradaDatos.pedirCliente(listaTemp);
+        // buscar el cliente por nombre
+        Cliente cliente = null;
+        for(Cliente j: clientes){
+            if(j.getNombre().equals(nombreCliente)){
+                cliente = j;
+            }
+        }
+
+        // sumar todos los servicios
+        System.out.println(cliente+"\n");
+        cliente.generarFactura();
     }
 }

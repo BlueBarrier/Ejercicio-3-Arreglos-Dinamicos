@@ -61,4 +61,8 @@ public class Dispositivo {
         }
     }
 
+    @Override
+    public String toString(){
+        return tipo +" marca: "+ fabricante;
+    }
 }
