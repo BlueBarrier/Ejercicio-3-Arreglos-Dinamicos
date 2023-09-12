@@ -3,11 +3,11 @@
  * Departamento de Ciencias de la Computación
  * Programación Orientada a Objetos - CC 2008 - 50
  * 
- * @author: Erick Barrera - 231238; Juan Figueroa - 
- * @description: driverprogram
+ * @author: Erick Barrera - 231238; Juan Figueroa - 23092
+ * @description: programa para estadísticas de la tienda
  * @version: 1.0
- * @fechaCreacion: 9/09/2023
- * @fechaMod: 09/09/2023
+ * @fechaCreacion: 10/09/2023
+ * @fechaMod: 11/09/2023
  */
 import java.util.ArrayList;
 import java.util.Scanner;

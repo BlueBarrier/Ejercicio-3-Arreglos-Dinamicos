@@ -5,9 +5,9 @@
  * 
  * @author: Erick Barrera - 231238
  * @description: driverprogram
- * @version: 1.0
+ * @version: 2.0
  * @fechaCreacion: 9/09/2023
- * @fechaMod: 09/09/2023
+ * @fechaMod: 11/09/2023
  */
 import java.util.ArrayList;
 public class TiendaManager {
